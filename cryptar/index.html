@@ -1,20 +1,81 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../index.css">
 <title>Cryptar</title>
 </head>
 
 <body>
 <h1>Cryptar</h1>
 
-<p>
-Coming soon.
+<h2>What is Cryptar?</h2>
 
-<p> Cryptar provides a bandwidth-efficient encrypted remote filesystem
-(or block store, depending on how one uses it).
+<p>
+Cryptar is a  free network-efficient encrypted backup and restore
+application.
+(Geek version:  It
+is akin to using rsync to maintain a mirror of your data, except
+that everything is encrypted:  plaintext never leaves your local host.)
+
+<p>
+Cryptar is also a library that permits application developers to store
+their data in the cloud (using AWS, on a remote filesystem via ssh,
+etc.) easily and with full encryption.  In addition, the cryptar API
+permits easy and simple data sharing with other users of the same
+application without revealing non-shared data.
+The cryptar API permits data to be stored naturally using a filesystem
+metaphor or as simple key-value pairs (Berkeley DB model).
+
+<p>
+Cryptar is coming soon.  If you are looking for the source code, look
+<a href="https://github.com/JeffAbrahamson/cryptar">here</a>.
+
+
+<h2>Why Cryptar?</h2>
+
+<p>
+Most applications that store data in the cloud either spin their own
+encryption or else risk revealing personal data.  While some
+applications have underlying business models that require the
+application provider to read the data, many do not, and customers are
+increasingly concerned about data privacy.
+
+<p>
+Cryptar ensures that plaintext never leaves the local host.
+
+
+<h2>How does it all Work?</h2>
+
+<p>
+Cryptar implements the cryptar algorithm, as
+described in the paper <a
+href="https://github.com/JeffAbrahamson/cryptar/blob/master/paper/abrahamson2004cryptar-improved.pdf">Cryptar:
+Secure, Untrustful, Differencing Backup</a> (J. Abrahamson,
+A. J. O'Donnell, <i>Cryptar: Secure, Untrustful, Differencing Backup</i>,
+NordU/usenix conference, Copenhagen, Denmark, 31 January - 1 February
+2004.).
+The cryptar algorithm is a variation on the rsync algorithm, in which
+remote checksums are stored separately in order to permit rsync's
+efficient differencing algorithm without unencrypted data ever leaving
+the local host.
+
+
+
+<h2>Free?</h2>
+
+Cryptar is available under two licenses.
+<ul>
+  <li> You may use cryptar under the terms of the GPL.  It is free to
+      you and to your users, but you do have to make available your
+      own source code under the same terms.
+  <li> You may use cryptar under a proprietary license and so avoid
+      the constraints of the GPL.
+</ul>
+
 
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Thu May  3 15:13:37 CEST 2012
+Last modified: Thu May  3 16:40:40 CEST 2012
 <!-- hhmts end -->
 </body> </html>
